@@ -1,7 +1,8 @@
-import axios from 'axios';
+// Import the environment variable
+import axios from "axios";
+const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
-const API_KEY = '5febb4806d9241efb68c2971d347390b';  
-
+// Use the API key in your API client configuration
 const apiClient = axios.create({
   baseURL: 'https://newsapi.org/v2',
   headers: {
@@ -9,12 +10,13 @@ const apiClient = axios.create({
   }
 });
 
+// Example function to fetch articles
 export const fetchArticles = (category = 'general', page = 1) => {
   return apiClient.get(`/top-headlines`, {
     params: {
       category,
       page,
-      pageSize: 10,  
+      pageSize: 10,
       country: 'in'  // Default country
     }
   });
