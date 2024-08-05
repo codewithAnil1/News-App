@@ -1,6 +1,6 @@
 // Import the environment variable
 import axios from "axios";
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+const API_KEY = "5febb4806d9241efb68c2971d347390b" ;
 
 // Use the API key in your API client configuration
 const apiClient = axios.create({
